@@ -22,4 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::apiResource('/articulo', ArticuloController::class);
+Route::apiResource('/articulos', ArticuloController::class);

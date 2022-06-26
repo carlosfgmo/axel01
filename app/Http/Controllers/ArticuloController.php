@@ -16,7 +16,7 @@ class ArticuloController extends Controller
     {
         $articulos = Articulo::get();
         return response()->json([
-            'articulos' => $articulos
+            'backend' => $articulos
         ]);
     }
 
@@ -30,7 +30,7 @@ class ArticuloController extends Controller
     {
         $articulo->Articulo::create($request->post());
         return response()->json([
-            'articulo' => $articulo,
+            'backend' => $articulo,
             'success' => true
         ]);
     }
@@ -57,7 +57,7 @@ class ArticuloController extends Controller
     {
         $articulo->update($request->post());
         return response()->json([
-            'articulo' => $articulo,
+            'backend' => $articulo,
             'success' => true
         ]);
     }
