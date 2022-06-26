@@ -5295,6 +5295,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5306,7 +5313,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/articulos').then(function (response) {
-      _this.articulos = response.data.backend, console.log(_this.articulos);
+      _this.articulos = response.data.backend;
     })["catch"](function (error) {
       console.log(error);
     });
@@ -27939,7 +27946,7 @@ var render = function () {
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
-    _c("table", { staticClass: "table" }, [
+    _c("table", { staticClass: "table table-striped" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
@@ -27953,6 +27960,10 @@ var render = function () {
             _c("td", [_vm._v(_vm._s(articulo.descripcion))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(articulo.stock))]),
+            _vm._v(" "),
+            _vm._m(1, true),
+            _vm._v(" "),
+            _vm._m(2, true),
           ])
         }),
         0
@@ -27974,7 +27985,25 @@ var staticRenderFns = [
         _c("th", [_vm._v("DESCRIPCION")]),
         _vm._v(" "),
         _c("th", [_vm._v("STOCK")]),
+        _vm._v(" "),
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("OPCIONES")]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn btn-warning" }, [_vm._v("Editar")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("Eliminar")]),
     ])
   },
 ]

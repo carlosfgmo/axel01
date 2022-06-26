@@ -3,13 +3,14 @@
         <h1 class="text-center">Mantenimiento de Articulos</h1>
         <hr>
 
-        <table class="table">
+        <table class="table table-striped">
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
                     <th>ARTICULO</th>
                     <th>DESCRIPCION</th>
                     <th>STOCK</th>
+                    <th colspan="2">OPCIONES</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +19,12 @@
                     <td>{{ articulo.nombre }}</td>
                     <td>{{ articulo.descripcion }}</td>
                     <td>{{ articulo.stock }}</td>
+                    <td>
+                        <button class="btn btn-warning">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -38,8 +45,7 @@ import axios from 'axios'
             axios
             .get('/api/articulos')
             .then(response => {
-                this.articulos = response.data.backend,
-                console.log(this.articulos)
+                this.articulos = response.data.backend
             })
             .catch(error => {
                 console.log(error)
