@@ -36,7 +36,7 @@ import axios from 'axios'
         },
         mounted() {
             axios
-            .get('articulos')
+            .get('/api/articulos')
             .then(response => {
                 this.articulos = response.data.backend,
                 console.log(this.articulos)

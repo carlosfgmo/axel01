@@ -5305,7 +5305,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('articulos').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/articulos').then(function (response) {
       _this.articulos = response.data.backend, console.log(_this.articulos);
     })["catch"](function (error) {
       console.log(error);
