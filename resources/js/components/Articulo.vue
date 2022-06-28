@@ -23,7 +23,7 @@
                         <button class="btn btn-warning">Editar</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">Eliminar</button>
+                        <button class="btn btn-danger" @click="eliminar(articulo.id)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -41,26 +41,25 @@ import axios from 'axios'
                 articulos: [],
             }
         },
-        mounted() {
-            axios
-            .get('/api/articulos')
-            .then(response => {
-                this.articulos = response.data.backend
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        methods: {
+            async listar() {
+                const response=await axios.get('/api/articulos');
+                this.articulos = response.data.backend;
+                // axios.get('/api/articulos')
+                // .then( response => {
+                //     this.articulos = response.data.backend
+                // })
+            },
+            async eliminar(id) {
+                const response=await axios.delete('/api/articulos/' + id);
+                this.listar();
+                // axios.delete('/api/articulos/' + id);
+                // this.listar();
+            }
         },
-        // methods: {
-        //     async listar () {
-        //         const res=await axios.get('articulos');
-        //         this.articulos = res.data;
-        //         console.log(res.data);
-        //     }
-        // },
-        // created() {
-        //     this.listar();
-        // }
+        created() {
+            this.listar();
+        },
     }
 </script>
 
